@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+    <div id="intro" class="text-center">
+        <div class="row">
+            <div class="col">
+    
+            </div>
+            <div class="col text-white" id="intro-text">
+                <h1>Assemble your own PC</h1>
+            </div>
+            
+        </div>
+        <!-- <button type="button" class="" id="build-now">Build Now</button> -->
+        <button type="button" class="btn btn-lg btn-primary text-center text-primary" id="build-now">Build Now</button>
+    </div>
+</div>
+
+
+<style>
+    #intro
+    {
+        background-color: #3567AF;
+        height: 95vh;
+    }
+
+    #intro .row
+    {
+        height: 80vh;
+    }
+
+    #intro-text
+    {
+        margin-top: 40%;
+    }
+
+    #build-now
+    {
+        background-color: white;
+        text-decoration-color: #3567AF;
+    }
+
+</style>
+{% endblock %}
