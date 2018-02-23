@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- icons -->
+
+		<!-- Override CSS file - add your own CSS rules -->
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<h1 class="header-heading">MYPCBUILDER</h1>
+			</div>
+			<div class="nav-bar">
+				<ul class="nav">
+					<li><a href="#">lOGIN</a></li>
+					<li><a href="#">SIGN UP</a></li>
+					<li><a href="#">ABOUT US</a></li>
+				</ul>
+			</div>
+			<div class="content">
+				<div class="main">
+
+					<h1>Home Page</h1>
+					<hr>
+
+					<!-- Heading levels -->
+					<h1>Heading level 1</h1>
+					<h2>Heading level 2</h2>
+					<h3>Heading level 3</h3>
+					<h4>Heading level 4</h4>
+					<h5>Heading level 5</h5>
+					<h6>Heading level 6</h6>
+					<hr>
+
+					<!-- Paragraphs -->
+					<h3><b>Why is it so Necessary?</b></h3>
+					<p>Millions of computers are sold every single day to people, who spend dozens of hours or even days to find the perfect computer that can accommodate their pockets. But now, it's time to say goodbye to all that wastage of time.
+Because this is the place where your time is valued beyond everything.
+This is the place where you'll get precisely the thing that you require without any bs.
+This is the place, the hub where you can BUILD your own little computer.
+
+Buildmypc is a platform where users can conveniently choose the components required to construct the best computers that their pockets can accommodate.
+
+You can build or upgrade your pc by customising and selecting your preferred components from a wide range of computer hardware-filtered according to your requirements.
+
+The filteration will be carried out considering the parameters and relevance that the customer has stated for its component hardware.
+
+There is a huge number of components in the market
+
+users can build their pc from their best components filtered out from an abundant list of sources
+
+We will give the user the components that he actually needs and not the ones that are portrayed in a hyped way.
+faster,quick and instant results</p>
+					
+					<hr>
+
+					<!-- Responsive images -->
+					<h3>Responsive images</h3>
+					<p>For images to be responsive (so that they will rescale to suit the width of the parent, use the <code>.img-responsive</code> class.</p>
+					<p><img class="img-responsive" src="capture.PNG" alt=""></p>
+
+					<h3>Buttons</h3>
+					<p>You can apply the <code>btn</code> class to any element that requires a button style.</p>
+					<p><a href="#" class="btn">Submit</a></p>
+					<hr>
+
+					<!-- Tables -->
+					
+				</div>
+			</div>
+			<div class="footer">
+				&copy; Copyright 2018
+			</div>
+		</div>
+	</body>
+</html>
+
+
+
+body
+{
+	margin: 0;
+	padding: 0;
+	color: #333;
+	background-color: #eee;
+	font: 1em/1.2 "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6
+{
+	margin: 0 0 .5em;
+	font-weight: 500;
+	line-height: 1.1;
+}
+p
+{
+	margin: 0 0 1.5em;
+	line-height: 1.5;
+}
+
+
+hr
+{
+	height: 0;
+	margin-top: 1em;
+	margin-bottom: 2em;
+	border: 0;
+	border-top: 1px solid #ddd;
+}
+
+a:link { color: royalblue; }
+a:visited { color: purple; }
+a:focus { color: black; }
+a:hover { color: green; }
+a:active { color: red; }
+
+/* -----------------------
+Layout styles
+------------------------*/
+
+.container
+{
+	max-width: 50em;
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+.header
+{
+	color: #fff;
+	background: #555;
+	padding: 1em 1.25em;
+}
+
+.header-heading { margin: 0; }
+
+.nav-bar
+{
+	background: #000;
+	padding: 0;
+}
+
+.content { padding: 1em 1.25em; }
+
+.footer
+{
+	color: #fff;
+	background: #000;
+	padding: 1em 1.25em;
+}
+
+/* -----------------------
+Nav
+------------------------*/
+
+.nav
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.nav a
+{
+	display: block;
+	padding: .7em 1.25em;
+	color: #fff;
+	text-decoration: none;
+	border-bottom: 1px solid gray;
+}
+
+.nav a:link { color: white; }
+.nav a:visited { color: white; }
+
+.nav a:focus
+{
+	color: black;
+	background-color: white;
+}
+
+.nav a:hover
+{
+	color: white;
+	background-color: green;
+}
+
+.nav a:active
+{
+	color: white;
+	background-color: red;
+}
+
+/* -----------------------
+Single styles
+------------------------*/
+
+.img-responsive { max-width: 100%; }
+
+.btn
+{
+	color: #fff !important;
+	background-color: royalblue;
+	border-color: #222;
+	display: inline-block;
+	padding: .5em 1em;
+	margin-bottom: 0;
+	font-weight: 400;
+	line-height: 1.2;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: .2em;
+	text-decoration: none;
+}
+
+.btn:hover
+{
+	color: #fff !important;
+	background-color: green;
+}
+
+.btn:focus
+{
+	color: #fff !important;
+	background-color: black;
+}
+
+.btn:active
+{
+	color: #fff !important;
+	background-color: red;
+}
+
+
+/* -----------------------
+Wide styles
+------------------------*/
+
+@media (min-width: 42em)
+{
+	.header { padding: 1.5em 3em; }
+	.nav-bar { padding: 1em 3em; }
+	.content { padding: 2em 3em; }
+	.footer { padding: 2em 3em; }
+	
+	.nav li
+	{
+		display: inline;
+		margin: 0 1em 0 0;
+	}
+	
+	.nav a
+	{
+		display: inline;
+		padding: 0;
+		border-bottom: 0;
+	}
+}
+
