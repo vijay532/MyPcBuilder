@@ -6,14 +6,16 @@
     <div id="intro" class="text-center">
         <div class="row">
             <div class="col">
-    
+                <br><br><br><br><br><br><br>
+                <img class="animated bounceIn" src="../static/images/desktop.png" width="256" height="256" alt="">
+                <img class="animated bounceIn" src="../static/images/xbox.png" alt="">
             </div>
             <div class="col text-white p-0" id="intro-text">
                 <h1>Assemble your own PC</h1>
             </div>
             
         </div>
-        <button type="button" class="btn btn-lg btn-primary text-center text-primary" id="build-now">Build Now</button>
+        <button type="button" class="btn btn-lg btn-primary text-center text-primary" id="build-now"><a href="#preference" id=""> Build Now</a></button>
     </div>
 
     <div id="about">
@@ -23,11 +25,19 @@
     </div>
 
     <div id="preference">
-        <div class="container col " id="btn-grp">
-            <div class="row text-center">
-                <a href="#" class="border p-5 col-md-3 m-2">RAM</a>
-                <a href="#" class="border p-5 col-md-3 m-2">GPU</a> 
-                <a href="#" class="border p-5 col-md-3 m-2">Screen</a> 
+        <div class="container col-md-9 text-center" id="btn-grp">
+            <div id="btn-container" class="text-center">
+                <div class="row text-center" id="btn-grp-1">
+                    <a href="#" class="p-5 col-md-3 ml-5 float-left" id="ram">RAM</a>
+                    <a href="#" class="p-5 col-md-3 ml-5 " id="gpu">GPU</a> 
+                    <a href="#" class="p-5 col-md-3 ml-5 float-right" id="ram">Screen</a> 
+                </div>
+                <br><br>
+                <div class="row text-center">
+                    <a href="#" class="p-5 col-md-3 ml-5">RAM</a>
+                    <a href="#" class="p-5 col-md-3 ml-5">GPU</a> 
+                    <a href="#" class="p-5 col-md-3 ml-5">Screen</a> 
+                </div>
             </div>
         </div>
     </div>
@@ -78,7 +88,7 @@
     #about
     {
         height: 105vh;
-        /*background-color: rebeccapurple;*/
+        background-color: rebeccapurple;
     }
 
     #preference
@@ -86,9 +96,10 @@
         height: 100vh;
     }
 
+    
+
     #btn-grp
     {
-        width: 60%;
         height: 60%;
         top: 50%;
         transform: translateY(-50%);
@@ -101,12 +112,31 @@
     #btn-grp row a
     {
         padding: 2%;
+        border: 5px solid black;
+    }
+
+    #btn-grp a
+    {
+        border: 5px solid #3567AF;   
+        text-decoration: none;     
+    }
+
+    #ram:hover ~ #preference
+    {
+        background-color: red;
     }
 
     #os
     {
         height: 100vh;
-        /*background-color: rebeccapurple;*/
+        background-color: rebeccapurple;
     }
 </style>
+
+<script>
+    /*$("#ram").hover(function(){
+        $(this).parent().parent().parent().parent().css({'background-color':'red'})
+    });*/
+</script>
+
 {% endblock %}
