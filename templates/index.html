@@ -43,61 +43,101 @@
     </div>
 
     <div id="os">
-        
+        <div id="os">
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+    <h2>Specifications Of OS</h2>
+		<br>
+		<button type="button" data-toggle="collapse" class="btn btn-primary" data-target="#demo">Windows</button>
+		<div id="demo" class="collapse">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+		sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+		</div><br><br>
+		<button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo2">Linux</button>
+		<div id="demo2" class="collapse">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+		sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+		</div>
+    </div>
+    <div class="col-sm-6">
+    <div class="contain">
+  <h2>Product Ranges</h2>  
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="#">1-10k</a></li>
+      <li><a href="#">10k-20k</a></li>
+      <li><a href="#">20k-30k</a></li>
+      <li><a href="#">30k-40k</a></li>
+      <li><a href="#">40k-50k</a></li>
+      <li><a href="#">50k-60k</a></li>
+      <li><a href="#">60k-70k</a></li>
+      <li><a href="#">70k-80k</a></li>
+      <li><a href="#">80k-90k</a></li>
+      <li><a href="#">90k-1L</a></li>
+    </ul>
+  </div>
+  </div>
+</div>
     </div>
 </div>
 
 
 <style>
-
     body
     {
         overflow-x: hidden;
     }
-
     #intro 
     {
         -webkit-box-sizing: content-box;
         -moz-box-sizing: content-box;
         box-sizing: content-box;
     }
-
     #intro
     {
         background-color: #3567AF;
         height: 95vh;
     }
-
     #intro .row
     {
         height: 80vh;
     }
-
     #intro-text
     {
         margin-top: 40%;
         padding: -15px;
     }
-
     #build-now
     {
         background-color: white;
         text-decoration-color: #3567AF;
     }
-
     #about
     {
         height: 105vh;
         background-color: rebeccapurple;
     }
-
     #preference
     {
         height: 100vh;
     }
-
     
-
     #btn-grp
     {
         height: 60%;
@@ -108,24 +148,20 @@
         -webkit-transform: translateY(-50%);
         -o-transform: translateY(-50%);
     }
-
     #btn-grp row a
     {
         padding: 2%;
         border: 5px solid black;
     }
-
     #btn-grp a
     {
         border: 5px solid #3567AF;   
         text-decoration: none;     
     }
-
     #ram:hover ~ #preference
     {
         background-color: red;
     }
-
     #os
     {
         height: 100vh;
