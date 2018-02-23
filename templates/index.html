@@ -8,18 +8,50 @@
             <div class="col">
     
             </div>
-            <div class="col text-white" id="intro-text">
+            <div class="col text-white p-0" id="intro-text">
                 <h1>Assemble your own PC</h1>
             </div>
             
         </div>
-        <!-- <button type="button" class="" id="build-now">Build Now</button> -->
         <button type="button" class="btn btn-lg btn-primary text-center text-primary" id="build-now">Build Now</button>
+    </div>
+
+    <div id="about">
+        <div>
+
+        </div>
+    </div>
+
+    <div id="preference">
+        <div class="container col " id="btn-grp">
+            <div class="row text-center">
+                <a href="#" class="border p-5 col-md-3 m-2">RAM</a>
+                <a href="#" class="border p-5 col-md-3 m-2">GPU</a> 
+                <a href="#" class="border p-5 col-md-3 m-2">Screen</a> 
+            </div>
+        </div>
+    </div>
+
+    <div id="os">
+        
     </div>
 </div>
 
 
 <style>
+
+    body
+    {
+        overflow-x: hidden;
+    }
+
+    #intro 
+    {
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+    }
+
     #intro
     {
         background-color: #3567AF;
@@ -34,6 +66,7 @@
     #intro-text
     {
         margin-top: 40%;
+        padding: -15px;
     }
 
     #build-now
@@ -42,5 +75,38 @@
         text-decoration-color: #3567AF;
     }
 
+    #about
+    {
+        height: 105vh;
+        /*background-color: rebeccapurple;*/
+    }
+
+    #preference
+    {
+        height: 100vh;
+    }
+
+    #btn-grp
+    {
+        width: 60%;
+        height: 60%;
+        top: 50%;
+        transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+    }
+
+    #btn-grp row a
+    {
+        padding: 2%;
+    }
+
+    #os
+    {
+        height: 100vh;
+        /*background-color: rebeccapurple;*/
+    }
 </style>
 {% endblock %}
