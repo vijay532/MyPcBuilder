@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from amazon.api import AmazonAPI
 
 app = Flask(__name__)
 
