@@ -1,7 +1,6 @@
 # packages in environment at /home/asutosh/anaconda3/envs/MyPcBuilder:
 #
 # Name                    Version                   Build  Channel
-bottlenose                1.1.8                     <pip>
 ca-certificates           2017.08.26           h1d4fec5_0  
 certifi                   2018.1.18                py36_0  
 click                     6.7              py36h5253387_0  
@@ -12,14 +11,11 @@ libedit                   3.1                  heed3624_0
 libffi                    3.2.1                hd88cf55_4  
 libgcc-ng                 7.2.0                h7cc24e2_2  
 libstdcxx-ng              7.2.0                h7a57d05_2  
-lxml                      4.1.1                     <pip>
 markupsafe                1.0              py36hd9260cd_1  
 ncurses                   6.0                  h9df7e31_2  
 openssl                   1.0.2n               hb7f436b_0  
 pip                       9.0.1            py36h6c6f9ce_4  
 python                    3.6.4                hc3d631a_1  
-python-amazon-simple-product-api 2.2.11                    <pip>
-python-dateutil           2.6.1                     <pip>
 readline                  7.0                  ha6073c6_4  
 setuptools                38.5.1                   py36_0  
 six                       1.11.0                    <pip>
