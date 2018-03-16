@@ -30,15 +30,15 @@
             <h3 class="text-left text-white">Choose your preference</h3><hr>
             <div id="btn-container" class="text-center">
                 <div class="row text-center" id="btn-grp-1">
-                    <a href="#" class="p-5 col-md-3 ml-5 float-left" id="ram">Greater RAM</a>
-                    <a href="#" class="p-5 col-md-3 ml-5 " id="gpu">Awesome Graphic Card</a> 
-                    <a href="#" class="p-5 col-md-3 ml-5 float-right" id="ram">Better Display</a> 
+                    <a href="#ram" class="p-5 col-md-3 ml-5 float-left rounded-circle" id="ram" onmouseover="hide_elements()" onmouseout="show_elements()">Greater RAM</a>
+                    <a href="#" class="p-5 col-md-3 ml-5 rounded-circle" id="gpu">Awesome Graphic Card</a> 
+                    <a href="#" class="p-5 col-md-3 ml-5 float-right rounded-circle" id="display">Better Display</a> 
                 </div>
                 <br><br>
                 <div class="row text-center">
-                    <a href="#" class="p-5 col-md-3 ml-5">Humongous Storage</a>
-                    <a href="#" class="p-5 col-md-3 ml-5">Faster CPU</a> 
-                    <a href="#" class="p-5 col-md-3 ml-5">All in One</a> 
+                    <a href="#" class="p-5 col-md-3 ml-5 rounded-circle" id="storage">Humongous Storage</a>
+                    <a href="#" class="p-5 col-md-3 ml-5 rounded-circle" id="cpu">Faster CPU</a> 
+                    <a href="#" class="p-5 col-md-3 ml-5 rounded-circle" id="aio">All in One</a> 
                 </div>
             </div>
         </div>
@@ -74,7 +74,6 @@
                         <div class="dropdown">
                             <button class="btn btn-primary dropdown-toggle col-md-6" type="button" data-toggle="dropdown">Your Budget</button>
                             <ul class="dropdown-menu">
-                                <li><a href="#">1-10k</a></li>
                                 <li><a href="#">10k-20k</a></li>
                                 <li><a href="#">20k-30k</a></li>
                                 <li><a href="#">30k-40k</a></li>
@@ -84,6 +83,7 @@
                                 <li><a href="#">70k-80k</a></li>
                                 <li><a href="#">80k-90k</a></li>
                                 <li><a href="#">90k-1L</a></li>
+                                <li><a href="#">Above 1L</a></li>
                             </ul>
                         </div>
                     </div>
@@ -176,15 +176,14 @@
     #btn-grp row a
     {
         padding: 2%;
-        border: 5px solid black;
+        border: 3px solid black;
     }
 
     #btn-grp a
     {
-        border: 5px solid white;   
+        border: 2px solid white;   
         text-decoration: none;
         background: #3567AF;
-        border-radius: 5px;
         color: white;
     }
 
@@ -193,9 +192,20 @@
         padding: 0%;
     }
 
-    #ram:hover ~ #preference
+    #ram:hover
     {
-        background-color: red;
+        /*position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 5%;*/
+        padding: 7rem !important;
+        transition-duration: 0.5s;
+    }
+    #ram:focus
+    {
+        background-color: white;
+        color: #3567AF;
     }
 
     #os
@@ -219,6 +229,22 @@
     /*$("#ram").hover(function(){
         $(this).parent().parent().parent().parent().css({'background-color':'red'})
     });*/
+    function hide_elements()
+    {
+        document.getElementById('cpu').style.visibility="hidden";
+        document.getElementById('gpu').style.visibility="hidden";
+        document.getElementById('display').style.visibility="hidden";
+        document.getElementById('storage').style.visibility="hidden";
+        document.getElementById('aio').style.visibility="hidden";
+    }
+    function show_elements()
+    {
+        document.getElementById('cpu').style.visibility="visible";
+        document.getElementById('gpu').style.visibility="visible";
+        document.getElementById('display').style.visibility="visible";
+        document.getElementById('storage').style.visibility="visible";
+        document.getElementById('aio').style.visibility="visible";
+    }
 </script>
 
 {% endblock %}
