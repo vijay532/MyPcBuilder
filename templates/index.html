@@ -21,6 +21,7 @@
 
     <div id="about">
         <div class="container col-md-9 text-center" id="about-content">
+
             {% include "about.html" %}
         </div>
     </div>
@@ -215,6 +216,88 @@
         -o-transform: translateY(-50%);
     }
 
+    #about-body {
+	margin:0;
+	font-family:Arial,Helvetica,sans-serif;
+	background-size: auto;
+	
+}
+
+#intro-about{
+	margin-top: 1%;
+	margin-left: 50%;
+	padding: -100%;
+	position: relative;
+	bottom: 1%;
+	right:25%;
+}
+#intro-about:hover .overlay{
+opacity : 1;
+}
+
+/* Center Image*/
+img
+	{
+	border: 2px solid black;
+	position:relative;
+	 top: 1%;
+	 left:25%;
+	 opacity:1;
+	 z-index:-1;
+	 color:white;	
+	 margin:3px 3px 3px 3px;
+	}	
+
+/*hover*/	
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  margin:3px 3px 3px 3px;
+}
+
+.image:hover .overlay {
+  opacity: 1;
+}
+
+/* Links*/
+.fa {
+	  padding: 15px;
+	  font-size: 1%px;
+	  width: 1%vw;
+	  text-align: center;
+	  text-decoration: none;
+	  margin: 1%vw 2%vw;
+	  border-radius: 50%;
+	}
+					
+	.fa:hover
+	{
+    opacity: 0.8;
+	}
+
+	.fa-facebook 
+	{
+	background: #3B5998;
+	color: white;
+	}
+	.fa-twitter 
+	{
+	background: #55ACEE;
+	color: white;
+	}
+	.fa-instagram {
+	background: #125688;
+	color: white;
+	}
+
+
 </style>
 
 <script>
@@ -237,6 +320,21 @@
         document.getElementById('storage').style.visibility="visible";
         document.getElementById('aio').style.visibility="visible";
     }
+
+    funtion populate()
+    {
+    //Fname = document.form1.FirstName.value;
+    var x = document.getElementById('ram');
+    var y = document.getElementById('gpu');
+    var z = document.getElementById('display');
+    var a = document.getElementById('storage');
+    var b = document.getElementById('cpu');
+    var c = document.getElementById('aio');
+    //Lname = document.form1.LastName.value;
+    document.form1.CONTACT.value = Fname + " " + Lname;
+    document.
+    }
+
 </script>
 
 {% endblock %}

@@ -4,15 +4,15 @@ import collections
 import urllib.parse
 import hmac, hashlib
 import base64
-
+    
 access_key = 'AKIAIYXQISLBGBBINRXA'
 secret_key = '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'
 associate_tag = 'buildmypc03-20'
-
+    
 endpoint = "webservices.amazon.in"
-
+  
 uri = "/onca/xml"
-
+    
 params = {
     "Service" : "AWSECommerceService",
     "Operation" : "ItemSearch",
