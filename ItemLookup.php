@@ -11,27 +11,16 @@ $endpoint = "webservices.amazon.in";
 
 $uri = "/onca/xml";
 
-$abc = "";
-$max_price = $argv[1];
-foreach($argv as $index=>$value)
-{
-    if($value == "url.php" || $index == 1)
-    {
-        continue;
-    }
-    $abc = $abc.$value." ";
-}
+$item = $argv[1];
 
 $params = array(
     "Service" => "AWSECommerceService",
-    "Operation" => "ItemSearch",
+    "Operation" => "ItemLookup",
     "AWSAccessKeyId" => "AKIAIYXQISLBGBBINRXA",
     "AssociateTag" => "buildmypc03-20",
-    "SearchIndex" => "PCHardware",
-    "ResponseGroup" => "Images,ItemAttributes,Offers",
-    "Keywords" => "$abc",
-    "Sort" => "-price",
-    "MaximumPrice" => "$max_price"
+    "ItemId" => $item,
+    "IdType" => "ASIN",
+    "ResponseGroup" => "Images,ItemAttributes,Offers"
 );
 
 // Set current timestamp if not set
@@ -60,8 +49,6 @@ $signature = base64_encode(hash_hmac("sha256", $string_to_sign, $secret_key, tru
 // Generate the signed URL
 $request_url = 'http://'.$endpoint.$uri.'?'.$canonical_query_string.'&Signature='.rawurlencode($signature);
 
-echo $request_url
-
-// echo "Signed URL: \"".$request_url."\"";
+echo $request_url;
 
 ?>

@@ -1,0 +1,102 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body 
+    {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0%;
+        opacity: 1;
+    }
+
+    .container
+    {
+        opacity: 1;
+        z-index: 0.99;
+
+    }
+
+    input[type=text], input[type=email], input[type=password], select, textarea 
+    {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+    }
+
+    input[type=submit] 
+    {
+        background-color: #333;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover 
+    {
+        background-color: #300;
+    }
+
+    #container-contact
+    {
+        background-color: #300;
+    }
+
+    #container-contact-form
+    {
+        border-radius: 5px;
+        background-color: #e3e3e3;
+        padding: 20px;
+    }
+
+    
+</style>
+</head>
+<body>
+
+    <div>
+        <br><br>
+        <h3 class="float-left text-white"><strong>Contact Us</strong></h3>
+        <br><br><br><br>
+        <div class="row" class="container-contact">
+            <div id="container-contact-form" class="col-md-6 float-left p-3">
+                <form action="/action_page.php">
+                    <input type="text" id="name" name="name" placeholder="Your name..">
+        
+                    <input type="email" id="email" name="email" placeholder="Your email..">
+        
+                    <textarea id="subject" name="subject" placeholder="Your query.." style="height:200px"></textarea>
+        
+                    <input type="submit" class="col-4" value="Submit">
+                </form>
+            </div>
+    
+            <div id="googleMap" class="col-md-5 p-3 ml-auto" style="width:100%;"></div>
+
+
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+function myMap() 
+{
+    var mapProp= 
+    {
+        center:new google.maps.LatLng(19.0458615,72.89055919999998),
+        zoom:15,
+    };
+    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+</script>
+        
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwp794OZ_gRRBnKP6wqiYPsBPA0hLVz2Y&callback=myMap"></script>
+    

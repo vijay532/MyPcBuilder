@@ -7,7 +7,7 @@
 </nav>
 
 <div class="container mt-5">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <!-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
                 <div class="row">        
@@ -219,9 +219,9 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
-    </div>
-    <br>
-    <div class="container">
+    </div> -->
+    <!-- <br> -->
+    <!-- <div class="container">
         <h3>Comparisons</h3>
         <div>
             <div class="row">
@@ -247,30 +247,41 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
+    <h2>Monitors</h2>
 
     <div class="container">
         <div class="row">
             {%for item in items%}
                 {%for key,value in item.items()%}
-                    {%if key == "MediumImage"%}
-                        <div class="col-md-4 p-3">
+                    {%if key == "LargeImage" %}
+                        <div class="col-md-4 p-3" id="{{item.ASIN}}">
                             <div class="card text-center">
-                                <div class="card-header">
-                                PC Name
+                                <div class="card-header text-left text-truncate " data-toggle="tooltip" title="{{item.ItemAttributes.Title}}">
+                                    {{item.ItemAttributes.Title}}
                                 </div>
                                 <div class="row card-body">
+                                    {%if key == "LargeImage"%}
                                     <div class="col-sm text-center">
-                                        <img src="{{value['URL']}}" class="img-thumbnail" width="{{value['Width']['#text']}}" height="{{value['Height']['#text']}}" alt="">
+                                        <img src="{{value['URL']}}" class="img-thumbnail" alt="" style="border: 0px; height: 210px">
                                     </div>
+                                    {%endif%}
                                 </div>
                                 <hr>
-                                <div class="card-block">
-                                    <p class="card-text p-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <div class="card-block" >
+                                    <!-- <ul class="list-group list-group-flush">
+                                        <li class="list-group-item text-left text-truncate " data-toggle="tooltip" title="{{item.ItemAttributes.Feature[0]}}">{{item.ItemAttributes.Feature[0]}}</li>
+                                        <li class="list-group-item text-left text-truncate " data-toggle="tooltip" title="{{item.ItemAttributes.Feature[1]}}">{{item.ItemAttributes.Feature[1]}}</li>
+                                        <li class="list-group-item text-left text-truncate " data-toggle="tooltip" title="{{item.ItemAttributes.Feature[2]}}">{{item.ItemAttributes.Feature[2]}}</li>
+                                    </ul> -->
+                                    <p class="card-text p-2 text-left" style="color:#223284;">
+                                        <strong>{{item.OfferSummary.LowestNewPrice.FormattedPrice}}</strong>
+                                    </p>
                                 </div>
+                                
                                 <div class="card-footer text-muted">
-                                    <button class="btn btn-primary col-md-12 pr-4 btn-block">I Like It</button>
+                                    <button class="btn btn-primary col-md-12 pr-4 btn-block" onclick="chose('{{item.ASIN}}')">I Like It</button>
                                 <br>
                                 </div>
                             </div>
@@ -281,6 +292,7 @@
             {%endfor%}
         </div>
     </div>
+    <a href="/choose-cpu"><button class="btn btn-primary col-md-4 pr-4 btn-block" onclick="sendASIN()">Next</button></a>
 
 
 </div>
@@ -288,12 +300,17 @@
 {%for item in items%}
     <!-- {{item.LargeImage}} -->
     {%for key,value in item.items()%}
-        <!-- {{key}} -->
+        {{key}}
         {%if key == "LargeImage"%}
             {{value['Height']['#text']}}
         {%endif%}
+        {%if key == "ItemAttributes"%}
+            {{value['Brand']}}
+        {%endif%}
         <br>
     {%endfor%}
+    {{item.ItemAttributes.Feature[0]}}
+    {{item.LargeImage}}
 <br><hr><br>
 {%endfor%}
 
@@ -312,7 +329,20 @@
 </style>
 
 <script>
-    
+
+    var socket = io.connect('http://0.0.0.0:5000/');
+    var a;
+    function chose(asin)
+    {
+        a = asin;
+        document.getElementById(asin).style.border = "2px solid #3567AF";
+    }
+    function sendASIN()
+    {
+        console.log("Monitor is in "+a)
+        socket.emit('chose',a)
+    }
+
 </script>
 
 {% endblock %}

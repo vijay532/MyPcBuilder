@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<nav class="navbar navbar-css">
+    <a class="navbar-brand" href="/">PC Builder</a>
+</nav>
+
+<div class="container mt-5">
+
+    <h2>CPUs</h2>
+
+    <div class="container">
+        <div class="row">
+            {%for item in items%}
+                {%for key,value in item.items()%}
+                    {%if key == "LargeImage" %}
+                        <div class="col-md-4 p-3" id="{{item.ASIN}}" data-toggle="modal" data-target=".bd-example-modal">
+                            <div class="card text-center">
+                                <div class="card-header text-left text-truncate " data-toggle="tooltip" title="{{item.ItemAttributes.Title}}">
+                                    {{item.ItemAttributes.Title}}
+                                </div>
+                                <div class="row card-body">
+                                    {%if key == "LargeImage"%}
+                                    <div class="col-sm text-center">
+                                        <img src="{{value['URL']}}" class="img-thumbnail" alt="" style="border: 0px; height: 210px">
+                                    </div>
+                                    {%endif%}
+                                </div>
+                                
+                                <div class="card-block" >
+                                    
+                                    <p class="card-text p-2 text-left" style="color:#223284;">
+                                        <strong>{{item.OfferSummary.LowestNewPrice.FormattedPrice}}</strong>
+                                    </p>
+                                </div>
+                                
+                                <div class="card-footer text-muted">
+                                    <button class="btn btn-primary col-md-12 pr-4 btn-block" onclick="chose('{{item.ASIN}}')">I Like It</button>
+                                <br>
+                                </div>
+                            </div>
+                        </div>
+                    
+
+                        <div class="modal fade bd-example-modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">{{item.ItemAttributes.Brand}}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <img src="{{value['URL']}}" class="img-thumbnail" alt="" style="border: 0px; height: 210px">
+                                        </div>
+                                        <div class="col-9">
+                                            {{item.ItemAttributes.Title}} <br><hr><br>
+                                            {%for f in item.ItemAttributes.Feature%}
+                                            <ul>
+                                                <li><small>{{f}}</small></li>
+                                            </ul>
+                                            {%endfor%}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    {%endif%}
+                    <br>
+                    
+                {%endfor%}
+
+            {%endfor%}
+        </div>
+    </div>
+    <a href="/choose-mouse"><button class="btn btn-primary col-md-4 pr-4 btn-block" onclick="sendASIN()">Next</button></a>
+
+
+</div>
+
+{%for item in items%}
+    <!-- {{item.LargeImage}} -->
+    {%for key,value in item.items()%}
+        {{key}}
+        {%if key == "LargeImage"%}
+            {{value['Height']['#text']}}
+        {%endif%}
+        {%if key == "ItemAttributes"%}
+            {{value['Brand']}}
+        {%endif%}
+        <br>
+    {%endfor%}
+    {{item.LargeImage}}
+<br><hr><br>
+{%endfor%}
+
+<style>
+    .navbar-css
+    {
+        background-color: #3567AF;
+    }
+
+    .navbar-css a
+    {
+        color: azure;
+    }
+
+    
+</style>
+
+<script>
+    var socket = io.connect('http://0.0.0.0:5000/');
+    var a;
+    function chose(asin)
+    {
+        a = asin;
+        document.getElementById(asin).style.border = "2px solid #3567AF";
+    }
+    function sendASIN()
+    {
+        console.log("Keyboard is in "+a)
+        socket.emit('chose',a)
+    }
+</script>
+
+{% endblock %}
